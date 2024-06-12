@@ -8,19 +8,23 @@ const List<Color> colorThemes = [
   Colors.teal,
   Colors.green,
   Colors.yellow,
-  Colors.orange,
+  Colors.lightBlue,
   Colors.pink
 ];
 
 class AppTheme {
   final int selectedColor;
 
-  AppTheme({this.selectedColor = 0})
-      : assert(selectedColor >= 0,
-            'Colors must be between 0 and ${colorThemes.length - 1}');
+  AppTheme({this.selectedColor = 5})
+      : assert(
+          selectedColor >= 0,
+          'Colors must be between 0 and ${colorThemes.length - 1}',
+        );
 
   ThemeData theme() {
     return ThemeData(
-        useMaterial3: true, colorSchemeSeed: colorThemes[selectedColor]);
+      useMaterial3: true,
+      colorSchemeSeed: colorThemes[selectedColor],
+    );
   }
 }
